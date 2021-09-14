@@ -1,0 +1,11 @@
+# Carpeta excluidas
+node_modules/
+temp/
+tmp/
+
+# Archivos Ignorados
+*.txt
+*.png
+*.temp
+*.tmp
+*.swp
