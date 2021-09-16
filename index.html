@@ -52,6 +52,19 @@
                 <li><strong>git rm --cached &lt;file></strong> elimina el archivo del INDEX, no realiza mas seguimiento.</li>
             </ul>
         </article>
+        <article>
+            <h3>Repository</h3>
+            <p>
+                Corresponde al area donde se almacenan las confirmaciones de cambios en formato BLOB (Binary Large Object File), una vez realizadas creamos un punto de control al que podemos volver en cualquier momento. Estos commits se utilizan como referentes para navegar dentro del historial.
+            </p>
+            <ul class="commands">
+                <li><strong>git commit</strong> abre el editor para realizar una confirmacion</li>
+                <li><strong>git log</strong> muestra el historial de confirmaciones</li>
+                <li><strong>git blame &lt;file></strong> muestra los datos del autor que edito el archivo linea por linea</li>
+                <li><strong>git push -u &lt;remote> &lt;branch></strong> agrega al respositorio remoto la rama seleccionada</li>
+                <li><strong>git fetch &lt;remote></strong> captura la historia del repositorio remoto</li>
+            </ul>
+        </article>
     </section>
 </body>
 </html>
