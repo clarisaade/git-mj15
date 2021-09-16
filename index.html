@@ -31,6 +31,27 @@
                 <li><strong>rm -rf .git</strong> elimina el repositorio</li>
             </ul>
         </article>
+        <article>
+            <h3>Staging Area (INDEX)</h3>
+            <p>
+                El area de control de cambios es aquella donde se realiza el seguimiento de los archivos y permite la comparacion del Working Directory con los commits almacenados en el historial de cambios. Cuando agregamos un archivo al INDEX se realiza la captura del codigo (SNAPSHOT) y luego debemos confirmar si vamos a utilizarla o agregar mas modificaciones.
+            </p>
+            <ul class="commands">
+                <li>
+                    <strong>git status</strong> muestra al usuario el estado de los diferentes archivos que se encuentran en la carpeta del proyecto, dentro de los valores que podemos encontrar estan:
+                    <ul>
+                        <li>untracked: no se esta haciendo seguimiento, irrecuperable en caso de perdidad.</li>
+                        <li>staged: se realizo la captura, pero todavia no se confirmaron los cambios.</li>
+                        <li>commited: los cambios fueron registrados en el historial mediante un commit.</li>
+                        <li>modified: el archivo difiere con la ultima captura realizada, se esta haciendo seguimiento</li>
+                    </ul>
+                </li>
+                <li><strong>git add &lt;file></strong> agrega el archivo al INDEX</li>
+                <li><strong>git diff</strong> muestra las diferencias entre el Working Directory y la ultima confirmacion</li>
+                <li><strong>git restore --staged &lt;file></strong> quita la captura realizada del INDEX</li>
+                <li><strong>git rm --cached &lt;file></strong> elimina el archivo del INDEX, no realiza mas seguimiento.</li>
+            </ul>
+        </article>
     </section>
 </body>
 </html>
