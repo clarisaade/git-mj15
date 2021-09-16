@@ -6,6 +6,29 @@
     body,
     h1,
     h2,
-    h3{
+    h3,
+    .menu{
         margin: 0;
+    }
+/*Barra de Navegacion*/
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        background: linear-gradient(to right, #c36, #448);
+    }
+    nav a{
+        display: block;
+        padding: .25rem;
+        color: #eee;
+        text-decoration: none;
+    }
+    .menu{
+        width: 100%;
+        padding: 0;
+        list-style: none;
+    }
+    .menu a:hover{
+        background-color: #3338; /* rbga(51,51,51,.5) */
     }
