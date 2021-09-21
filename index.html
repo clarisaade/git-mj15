@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="
+    <meta name="viewport" 
+				content="
             width=device-width, 
             initial-scale=1,
             maximum-scale=3">
@@ -12,7 +13,6 @@
     <!--Styles CSS-->
     <title>GIT Desarrollo Colaborativo</title>
 </head>
-
 <body>
     <nav>
         <a href="">GIT</a>
@@ -46,8 +46,7 @@
         <article>
             <h3>Staging Area (INDEX)</h3>
             <p>
-                El area de control de cambios es aquella donde se realiza el seguimiento de los archivos y permite la comparacion del Working Directory con los commits almacenados en el historial de cambios. Cuando agregamos un archivo al INDEX se realiza la captura
-                del codigo (SNAPSHOT) y luego debemos confirmar si vamos a utilizarla o agregar mas modificaciones.
+                El area de control de cambios es aquella donde se realiza el seguimiento de los archivos y permite la comparacion del Working Directory con los commits almacenados en el historial de cambios. Cuando agregamos un archivo al INDEX se realiza la captura del codigo (SNAPSHOT) y luego debemos confirmar si vamos a utilizarla o agregar mas modificaciones.
             </p>
             <ul class="commands">
                 <li>
@@ -68,8 +67,7 @@
         <article>
             <h3>Repository</h3>
             <p>
-                Corresponde al area donde se almacenan las confirmaciones de cambios en formato BLOB (Binary Large Object File), una vez realizadas creamos un punto de control al que podemos volver en cualquier momento. Estos commits se utilizan como referentes para
-                navegar dentro del historial.
+                Corresponde al area donde se almacenan las confirmaciones de cambios en formato BLOB (Binary Large Object File), una vez realizadas creamos un punto de control al que podemos volver en cualquier momento. Estos commits se utilizan como referentes para navegar dentro del historial.
             </p>
             <ul class="commands">
                 <li><strong>git commit</strong> abre el editor para realizar una confirmacion</li>
@@ -85,14 +83,13 @@
         <article>
             <h3>HEAD</h3>
             <p>
-                Apuntador movil que indica al usuario en que punto se encuentra dentro del historial de cambios. Tambien se utiliza para desplazarse entre los commits y funciona como referente para facilitar la navegacion; es decir que si escribimos <em>git checkout HEAD~n</em>                indicamos que queremos volver tantos commits hacia atras como el valor de n.
+                Apuntador movil que indica al usuario en que punto se encuentra dentro del historial de cambios. Tambien se utiliza para desplazarse entre los commits y funciona como referente para facilitar la navegacion; es decir que si escribimos <em>git checkout HEAD~n</em> indicamos que queremos volver tantos commits hacia atras como el valor de n.
             </p>
         </article>
         <article>
             <h3>BRANCH</h3>
             <p>
-                Apuntador dinamico que se corresponde con el ultimo commit de una linea en particular, se utilizan para facilitar la navegacion dentro del historial y para probar o realizar cambios en el proyecto sin comprometer la historia principal. Se pueden gestionar
-                tanto local como remotamente y podemos utilizar las diferentes estrategias de git para integrar los cambios.
+                Apuntador dinamico que se corresponde con el ultimo commit de una linea en particular, se utilizan para facilitar la navegacion dentro del historial y para probar o realizar cambios en el proyecto sin comprometer la historia principal. Se pueden gestionar tanto local como remotamente y podemos utilizar las diferentes estrategias de git para integrar los cambios.
             </p>
         </article>
     </section>
@@ -148,15 +145,5 @@
     </footer>
     <!--Scripts JS-->
     <script src="scripts/main.js"></script>
-    <section>
-        <h2>Apuntadores de GIT</h2>
-        <article>
-            <h3>HEAD</h3>
-            <p>
-                Apuntador movil que indica al usuario en que punto se encuentra dentro del historial de cambios. Tambien se utiliza para desplazarse entre los commits y funciona como referente para facilitar la navegacion; es decir que si escribimos <em>git checkout HEAD~n</em>                indicamos que queremos volver tantos commits hacia atras como el valor de n.
-            </p>
-        </article>
-    </section>
-</body>
-
+	</body>
 </html>
