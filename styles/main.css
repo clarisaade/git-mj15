@@ -13,7 +13,7 @@
 /*Barra de Navegacion*/
     nav{
         position: sticky;
-        top:0;
+        top: 0;
         z-index: 2;
         display: flex;
         justify-content: space-between;
@@ -48,7 +48,11 @@
         nav .menu{
             display: flex;
             width: auto;
-            max height: 600px;
-
+            max-height: 600px;
         }
     }
+		@media screen and (min-width:1200px){
+				nav{
+						justify-content: space-around;
+				}
+		}
