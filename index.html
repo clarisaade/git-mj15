@@ -10,6 +10,7 @@
             initial-scale=1,
             maximum-scale=3">
     <link rel="stylesheet" href="styles/main.css">
+    <!--Styles CSS-->
     <title>GIT Desarrollo Colaborativo</title>
 </head>
 <body>
@@ -21,7 +22,6 @@
             <li><a href="about.html" title="acerca">acerca</a></li>
             <li><a href="gallery.html" title="galeria">galeria</a></li>
             <li><a href="#contact" title="contacto">contacto</a></li>
-
         </ul>
     </nav>
     <header>
@@ -78,6 +78,57 @@
             </ul>
         </article>
     </section>
+    <section>
+        <h2>Apuntadores de GIT</h2>
+        <article>
+            <h3>HEAD</h3>
+            <p>
+                Apuntador movil que indica al usuario en que punto se encuentra dentro del historial de cambios. Tambien se utiliza para desplazarse entre los commits y funciona como referente para facilitar la navegacion; es decir que si escribimos <em>git checkout HEAD~n</em> indicamos que queremos volver tantos commits hacia atras como el valor de n.
+            </p>
+        </article>
+        <article>
+            <h3>BRANCH</h3>
+            <p>
+                Apuntador dinamico que se corresponde con el ultimo commit de una linea en particular, se utilizan para facilitar la navegacion dentro del historial y para probar o realizar cambios en el proyecto sin comprometer la historia principal. Se pueden gestionar tanto local como remotamente y podemos utilizar las diferentes estrategias de git para integrar los cambios.
+            </p>
+        </article>
+    </section>
+    <footer>
+        <table class="colabs">
+            <caption>Colaboradores</caption>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Usuario</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cristian Racedo</td>
+                    <td>c215714n</td>
+                    <td>Cristiandracedo@hotmail.com</td>
+                </tr>
+                <tr>
+                    <td>Martin Aguilar</td>
+                    <td>martinagui</td>
+                    <td>martin.agui@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Patricio Naumann</td>
+                    <td>patricio-naumann</td>
+                    <td>patricio.naumann@eset.com</td>
+                </tr>
+                <tr>
+                    <td>Enzo Suarez</td>
+                    <td>Enzo618</td>
+                    <td>enzos_618@hotmail.com</td>
+                </tr>
+                <!--Ingrese sus datos-->
+            </tbody>
+        </table>
+    </footer>
+    <!--Scripts JS-->
     <script src="scripts/main.js"></script>
     <section>
         <h2>Apuntadores de GIT</h2>
