@@ -37,3 +37,20 @@
     .menu a:hover{
         background-color: #3338; /* rbga(51,51,51,.5) */
     }
+/*Pantallas medianas - Tablets*/
+    @media screen and (min-width:768px){
+        nav button{
+            display: none;
+        }
+        nav .menu{
+            display: flex;
+            width: auto;
+            max-height: 600px;
+        }
+    }
+/*Pantallas grandes - HD Desktop*/
+    @media screen and (min-width:1200px){
+        nav{
+            justify-content: space-around;
+        }
+    }
