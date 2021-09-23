@@ -7,6 +7,7 @@
     h1,
     h2,
     h3,
+    header p,
     .menu{
         margin: 0;
     }
@@ -20,6 +21,16 @@
         align-items: center;
         flex-wrap: wrap;
         background: linear-gradient(to right, #c36, #448);
+    }
+    .btn{
+        margin: .5rem;
+        border: .1rem solid #eee;
+        color: #eee;
+        background-color: transparent;
+    }
+    .btn:hover{
+        color:#448;
+        background-color: #eee;
     }
     nav a{
         display: block;
@@ -39,6 +50,19 @@
     }
     .menu a:hover{
         background-color: #3338; /* rbga(51,51,51,.5) */
+    }
+/*Cabecera de Pagina*/
+    header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        max-height: 640px;
+        color:#eee;
+        background-color: #333;
+        text-align: center;
+        text-shadow: 0 0 1vw #eee;
+        font-size: calc(2vw + .8rem);
     }
 /*Repositorios*/
     .social{
@@ -79,7 +103,7 @@
     }
     .colabs tbody tr:nth-child(odd){ background-color: rgba(102,102,102,.5);}
     .colabs tbody tr:nth-child(even){ background-color: rgba(51,51,51,.5);}
-
+/*Pantallas medianas - Tablets*/
     @media screen and (min-width:768px){
         nav button {
             display: none;
@@ -90,8 +114,9 @@
             max-height: 600px;
         }
     }
-		@media screen and (min-width:1200px){
-				nav{
-						justify-content: space-around;
-				}
-		}
+/*Pantallas grandes - Desktop*/
+    @media screen and (min-width:1200px){
+            nav{
+                    justify-content: space-around;
+            }
+    }
