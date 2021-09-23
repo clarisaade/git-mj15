@@ -118,6 +118,12 @@
             <p>
                 Apuntador estatico que apunta al commit donde haya sido aplicado, se utiliza principalmente para el versionado del proyecto. La estructura de las etiquetas al momento de aplicarse suele ser <em>v0.0.0</em> para indicar version principal, subversion, y correciones o revisiones. Tambien facilita la navegacion dentro del historial.
             </p>
+            <ul class="commands">
+                <li><strong>git tag -l</strong> muestra las etiquetas asignadas</li>
+                <li><strong>git tag &lt;name></strong> crea una etiqueta sobre el commit actual</li>
+                <li><strong>git tag &lt;new> &lt;old></strong> asigna una etiqueta en la misma posicion que otra</li>
+                <li><strong>git tag -d &lt;tag></strong> elimina la etiqueta seleccionada</li>
+            </ul>
         </article>
     </section>
     <footer>
