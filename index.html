@@ -105,6 +105,13 @@
             <p>
                 Apuntador de la zona temporal que permite almacenar los cambios en una confirmacion que integra las modificaciones almacenadas en el INDEX y se relaciona con el commit donde se haya realizado. Es ideal para cambiar de ramas cuando tenemos trabajo pendiente, que no amerita un commit. Al reaplicar los cambios se realiza una operacion merge a la inversa.
             </p>
+            <ul class="commands">
+                <li><strong>git stash</strong> agrega los cambios del INDEX a la zona temporal</li>
+                <li><strong>git stash list</strong> muestra todos los cambios almacenados en la zona temporal</li>
+                <li><strong>git stash apply stash@{n}</strong> aplica los cambios de la zona temporal en el Working Directory</li>
+                <li><strong>git stash drop stash@{n}</strong> elimina los cambios almacenados en la zona temporal</li>
+                <li><strong>git stash pop stash@{n}</strong> aplica y elimina los cambios de la zona temporal</li>
+            </ul>
         </article>
         <article>
             <h3>TAG</h3>
