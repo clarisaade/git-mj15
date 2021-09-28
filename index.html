@@ -143,6 +143,12 @@
             <p>
                 Este comando permite eliminar los commits entre el ultimo realizado y el que se utilizo como referencia, es ideal si necesitamos reescribir el historial de cambios o simplemente queremos reestablecer nuestro proyecto, ya sea porque necesitamos implementar los commits de otra forma o simplemente porque se introdujeron varios errores en el trayecto.
             </p>
+            <ul class="commands">
+                <li><strong>git reset &lt;ref></strong> elimina los commits entre el ultimo y el seleccionado, no afecta al Working Directory.</li>
+                <li><strong>git reset --mixed &lt;ref></strong> elimina los commits y reestablece el INDEX.</li>
+                <li><strong>git reset --hard &lt;ref></strong> reestablece por completo el proyecto.</li>
+                <li><strong>git reset &lt;ref> -- &lt;file></strong> reestablece solamente el archivo seleccionado.</li>
+            </ul>
         </article>
         <article>
             <h3>REVERT</h3>
