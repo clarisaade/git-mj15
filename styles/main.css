@@ -64,6 +64,10 @@
         text-shadow: 0 0 1vw #eee;
         font-size: calc(2vw + .8rem);
     }
+/*Contenido Principal*/
+
+/*Listas de comandos*/
+
 /*Repositorios*/
     .social{
         display: flex;
@@ -84,6 +88,8 @@
         background-color: #666;
         box-shadow: 0 0 .5rem #333;
     }
+/*Mapa de Contacto*/
+
 /*Tabla Colaboradores*/
     .colabs{
         margin: auto;
@@ -103,6 +109,8 @@
     }
     .colabs tbody tr:nth-child(odd){ background-color: rgba(102,102,102,.5);}
     .colabs tbody tr:nth-child(even){ background-color: rgba(51,51,51,.5);}
+/*Formulario de Contacto*/
+
 /*Pantallas medianas - Tablets*/
     @media screen and (min-width:768px){
         nav button {
