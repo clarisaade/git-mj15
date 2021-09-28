@@ -155,6 +155,11 @@
             <p>
                 Este comando genera un commit con las operaciones inversas al commit referenciado, se utiliza cuando las confirmaciones fueron subidas al repositorio remoto y necesitamos eliminar algun cambio. Este comando no afecta al historial debido a que el nuevo commit deshace las operaciones seleccionadas.
             </p>
+            <ul class="commands">
+                <li><strong>git revert &lt;ref></strong> realiza un commit con las operacion contrarias del seleccionado.</li>
+                <li><strong>git revert --abort </strong> anula la operacion de reversion en caso de que se genere un conflicto.</li>
+                <li><strong>git revert --continue </strong> procede con el commit una vez se haya resuelto el conflicto.</li>
+            </ul>
         </article>
         <article>
             <h3>BISECT</h3>
