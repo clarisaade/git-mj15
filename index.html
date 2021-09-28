@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" 
+				content="
+            width=device-width, 
+            initial-scale=1,
+            maximum-scale=3">
+    <link rel="stylesheet" href="styles/main.css">
+    <!--Styles CSS-->
+    <title>GIT Desarrollo Colaborativo</title>
+</head>
+<body>
+    <nav>
+        <a href="">GIT</a>
+        <button class="btn">&equiv;</button>
+        <ul class="menu">
+            <li><a href="#" title="inicio">inicio</a></li>
+            <li><a href="about.html" title="acerca">acerca</a></li>
+            <li><a href="gallery.html" title="galeria">galeria</a></li>
+            <li><a href="#contact" title="contacto">contacto</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>GIT</h1>
+        <p>Desarrollo Colaborativo</p>
+    </header>
+    <!-- Configuracion Inicial -->
+    <section>
+        <h2>Configuracion inicial</h2>
+        <article>
+            <ul class="commands">
+                <li><strong>git config --global user.name "John Doe"</strong></li>
+                <li><strong>git config --global user.email johndoe@example.com</strong></li>
+            </ul>
+        </article>
+    </section>
+    <section>
+        <h2>Areas de GIT</h2>
+        <article>
+            <h3>Working Directory</h3>
+            <p>
+                El area de trabajo, basicamente, consiste en la carpeta donde inicializamos el repositorio y donde vamos a estar creando, editando y eliminando los archivos de nuestro proyecto. Muy rara vez vamos a estar utilizando la linea de comandos en este area.
+            </p>
+            <ul class="commands">
+                <li><strong>dir || ls</strong> muestra el contenido de la carpeta</li>
+                <li><strong>mkdir &lt;name></strong> crea una carpeta</li>
+                <li><strong>cd &lt;path></strong> abre un directorio</li>
+                <li><strong>git init</strong>inicializa un repositorio de git</li>
+                <li><strong>rm -rf .git</strong> elimina el repositorio</li>
+            </ul>
+        </article>
+        <article>
+            <h3>Staging Area (INDEX)</h3>
+            <p>
+                El area de control de cambios es aquella donde se realiza el seguimiento de los archivos y permite la comparacion del Working Directory con los commits almacenados en el historial de cambios. Cuando agregamos un archivo al INDEX se realiza la captura del codigo (SNAPSHOT) y luego debemos confirmar si vamos a utilizarla o agregar mas modificaciones.
+            </p>
+            <ul class="commands">
+                <li>
+                    <strong>git status</strong> muestra al usuario el estado de los diferentes archivos que se encuentran en la carpeta del proyecto, dentro de los valores que podemos encontrar estan:
+                    <ul>
+                        <li>untracked: no se esta haciendo seguimiento, irrecuperable en caso de perdidad.</li>
+                        <li>staged: se realizo la captura, pero todavia no se confirmaron los cambios.</li>
+                        <li>commited: los cambios fueron registrados en el historial mediante un commit.</li>
+                        <li>modified: el archivo difiere con la ultima captura realizada, se esta haciendo seguimiento</li>
+                    </ul>
+                </li>
+                <li><strong>git add &lt;file></strong> agrega el archivo al INDEX</li>
+                <li><strong>git diff</strong> muestra las diferencias entre el Working Directory y la ultima confirmacion</li>
+                <li><strong>git restore --staged &lt;file></strong> quita la captura realizada del INDEX</li>
+                <li><strong>git rm --cached &lt;file></strong> elimina el archivo del INDEX, no realiza mas seguimiento.</li>
+            </ul>
+        </article>
+        <article>
+            <h3>Repository</h3>
+            <p>
+                Corresponde al area donde se almacenan las confirmaciones de cambios en formato BLOB (Binary Large Object File), una vez realizadas creamos un punto de control al que podemos volver en cualquier momento. Estos commits se utilizan como referentes para navegar dentro del historial.
+            </p>
+            <ul class="commands">
+                <li><strong>git commit</strong> abre el editor para realizar una confirmacion</li>
+                <li><strong>git log</strong> muestra el historial de confirmaciones</li>
+                <li><strong>git blame &lt;file></strong> muestra los datos del autor que edito el archivo linea por linea</li>
+                <li><strong>git push -u &lt;remote> &lt;branch></strong> agrega al respositorio remoto la rama seleccionada</li>
+                <li><strong>git fetch &lt;remote></strong> captura la historia del repositorio remoto</li>
+            </ul>
+        </article>
+    </section>
+    <section>
+        <h2>Apuntadores de GIT</h2>
+        <article>
+            <h3>HEAD</h3>
+            <p>
+                Apuntador movil que indica al usuario en que punto se encuentra dentro del historial de cambios. Tambien se utiliza para desplazarse entre los commits y funciona como referente para facilitar la navegacion; es decir que si escribimos <em>git checkout HEAD~n</em> indicamos que queremos volver tantos commits hacia atras como el valor de n.
+            </p>
+        </article>
+        <article>
+            <h3>BRANCH</h3>
+            <p>
+                Apuntador dinamico que se corresponde con el ultimo commit de una linea en particular, se utilizan para facilitar la navegacion dentro del historial y para probar o realizar cambios en el proyecto sin comprometer la historia principal. Se pueden gestionar tanto local como remotamente y podemos utilizar las diferentes estrategias de git para integrar los cambios.
+            </p>
+            <ul class="commands">
+                <li><strong>git branch </strong> muestra las ramas creadas en el respositorio</li>
+                <li><strong>git branch &lt;name></strong> crea una rama desde la posicion actual</li>
+                <li><strong>git branch -mv &lt;name></strong> renombra la rama actual</li>
+                <li><strong>git branch -d &lt;branch></strong> elimina la rama seleccionada de manera segura</li>
+                <li><strong>git branch -D &lt;branch></strong> elimina la rama de manera forzada, aunque los cambios no se hayan integrado</li>
+                <li><strong>git push -d &lt;remote> &lt;branch> </strong> elimina del repositorio remoto la rama seleccionada</li>
+            </ul>
+        </article>
+        <article>
+            <h3>STASH</h3>
+            <p>
+                Apuntador de la zona temporal que permite almacenar los cambios en una confirmacion que integra las modificaciones almacenadas en el INDEX y se relaciona con el commit donde se haya realizado. Es ideal para cambiar de ramas cuando tenemos trabajo pendiente, que no amerita un commit. Al reaplicar los cambios se realiza una operacion merge a la inversa.
+            </p>
+            <ul class="commands">
+                <li><strong>git stash</strong> agrega los cambios del INDEX a la zona temporal</li>
+                <li><strong>git stash list</strong> muestra todos los cambios almacenados en la zona temporal</li>
+                <li><strong>git stash apply stash@{n}</strong> aplica los cambios de la zona temporal en el Working Directory</li>
+                <li><strong>git stash drop stash@{n}</strong> elimina los cambios almacenados en la zona temporal</li>
+                <li><strong>git stash pop stash@{n}</strong> aplica y elimina los cambios de la zona temporal</li>
+            </ul>
+        </article>
+        <article>
+            <h3>TAG</h3>
+            <p>
+                Apuntador estatico que apunta al commit donde haya sido aplicado, se utiliza principalmente para el versionado del proyecto. La estructura de las etiquetas al momento de aplicarse suele ser <em>v0.0.0</em> para indicar version principal, subversion, y correciones o revisiones. Tambien facilita la navegacion dentro del historial.
+            </p>
+            <ul class="commands">
+                <li><strong>git tag -l</strong> muestra las etiquetas asignadas</li>
+                <li><strong>git tag &lt;name></strong> crea una etiqueta sobre el commit actual</li>
+                <li><strong>git tag &lt;new> &lt;old></strong> asigna una etiqueta en la misma posicion que otra</li>
+                <li><strong>git tag -d &lt;tag></strong> elimina la etiqueta seleccionada</li>
+            </ul>
+        </article>
+    </section>
+    <section>
+        <h2>Control de Cambios</h2>
+        <article>
+            <h3>RESET</h3>
+            <p>
+                Este comando permite eliminar los commits entre el ultimo realizado y el que se utilizo como referencia, es ideal si necesitamos reescribir el historial de cambios o simplemente queremos reestablecer nuestro proyecto, ya sea porque necesitamos implementar los commits de otra forma o simplemente porque se introdujeron varios errores en el trayecto.
+            </p>
+        </article>
+    </section>
+    <footer>
+        <!-- Mapa de contacto y boton --> 
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6725775.229534308!2d-62.85835797499998!3d-34.602392999999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacc473596c3%3A0x568d6d5f7f1f535d!2sEducaci%C3%B3nIT!5e0!3m2!1ses-419!2sar!4v1632853379721!5m2!1ses-419!2sar" 
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <button>Mapa de contacto</button>
+        </div>
+        <div class="social">
+            <a href="https://github.com/C215714N/git-mj15" target="_blank">GitHub</a>
+            <a href="https://gitlab.com/C215714N/git-mj15" target="_blank">GitLab</a>
+            <a href="https://bitbucket.org/C215714N/git-mj15" target="_blank">BitBucket</a>
+        </div>
+        <table class="colabs">
+            <caption>Colaboradores</caption>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Usuario</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cristian Racedo</td>
+                    <td>c215714n</td>
+                    <td>Cristiandracedo@hotmail.com</td>
+                </tr>
+                <tr>
+                    <td>Linus Torvalds</td>
+                    <td>Tux</td>
+                    <td>lt@linux.com</td>
+                </tr>
+                <tr>
+                    <td>Bill Gates</td>
+                    <td>Windows</td>
+                    <td>b.gates@microsoft.com</td>
+                </tr>
+                <tr>
+                    <td>Martin Aguilar</td>
+                    <td>martinagui</td>
+                    <td>martin.agui@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Patricio Naumann</td>
+                    <td>patricio-naumann</td>
+                    <td>patricio.naumann@eset.com</td>
+                </tr>
+                <tr>
+                    <td>Enzo Suarez</td>
+                    <td>Enzo618</td>
+                    <td>enzos_618@hotmail.com</td>
+                </tr>
+                <tr>
+                    <td>Clarisa Saade</td>
+                    <td>clarisaade</td>
+                    <td>clarisasaade@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Melisa Perrone</td>
+                    <td>Melisa-2020</td>
+                    <td>melisaandrea@live.com.ar</td>
+                </tr>
+                <tr>
+                    <td>David Fontaiña</td>
+                    <td>davidfontaina</td>
+                    <td>david.fontaina@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Carla Fernandez</td>
+                    <td>Carla-F3rnand3z</td>
+                    <td>carla.k.fernandez@gmail.com</td>
+                </tr>
+                <!--Ingrese sus datos-->
+            </tbody>
+        </table>
+        <!-- Formulario de contacto -->
+    </footer>
+    <!--Scripts JS-->
+    <script src="scripts/main.js"></script>
+</body>
+</html>
