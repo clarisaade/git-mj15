@@ -16,7 +16,7 @@
 <body>
     <nav>
         <a href="">GIT</a>
-        <button>&equiv;</button>
+        <button class="btn">&equiv;</button>
         <ul class="menu">
             <li><a href="#" title="inicio">inicio</a></li>
             <li><a href="about.html" title="acerca">acerca</a></li>
@@ -28,6 +28,16 @@
         <h1>GIT</h1>
         <p>Desarrollo Colaborativo</p>
     </header>
+    <!-- Configuracion Inicial -->
+    <section>
+        <h2>Configuracion inicial</h2>
+        <article>
+            <ul class="commands">
+                <li><strong>git config --global user.name "John Doe"</strong></li>
+                <li><strong>git config --global user.email johndoe@example.com</strong></li>
+            </ul>
+        </article>
+    </section>
     <section>
         <h2>Areas de GIT</h2>
         <article>
@@ -126,7 +136,56 @@
             </ul>
         </article>
     </section>
+    <section>
+        <h2>Control de Cambios</h2>
+        <article>
+            <h3>RESET</h3>
+            <p>
+                Este comando permite eliminar los commits entre el ultimo realizado y el que se utilizo como referencia, es ideal si necesitamos reescribir el historial de cambios o simplemente queremos reestablecer nuestro proyecto, ya sea porque necesitamos implementar los commits de otra forma o simplemente porque se introdujeron varios errores en el trayecto.
+            </p>
+            <ul class="commands">
+                <li><strong>git reset &lt;ref></strong> elimina los commits entre el ultimo y el seleccionado, no afecta al Working Directory.</li>
+                <li><strong>git reset --mixed &lt;ref></strong> elimina los commits y reestablece el INDEX.</li>
+                <li><strong>git reset --hard &lt;ref></strong> reestablece por completo el proyecto.</li>
+                <li><strong>git reset &lt;ref> -- &lt;file></strong> reestablece solamente el archivo seleccionado.</li>
+            </ul>
+        </article>
+        <article>
+            <h3>REVERT</h3>
+            <p>
+                Este comando genera un commit con las operaciones inversas al commit referenciado, se utiliza cuando las confirmaciones fueron subidas al repositorio remoto y necesitamos eliminar algun cambio. Este comando no afecta al historial debido a que el nuevo commit deshace las operaciones seleccionadas.
+            </p>
+            <ul class="commands">
+                <li><strong>git revert &lt;ref></strong> realiza un commit con las operacion contrarias del seleccionado.</li>
+                <li><strong>git revert --abort </strong> anula la operacion de reversion en caso de que se genere un conflicto.</li>
+                <li><strong>git revert --continue </strong> procede con el commit una vez se haya resuelto el conflicto.</li>
+            </ul>
+        </article>
+        <article>
+            <h3>BISECT</h3>
+            <p>
+                Este comando permite al usuario realizar una busqueda binaria dentro del historial de confirmaciones para identificar en que commit se introdujo un codigo erroneo o no funcional. Solamente debemos indicar a GIT cual es el commit que contiene dicho error y cual de los que estan en el historial contiene un codigo completamente funcional.
+            </p>
+            <ul class="commands">
+                <li><strong>git bisect start</strong> inicia con la diseccion binaria del historial de confirmaciones.</li>
+                <li><strong>git bisect bad</strong> indica que el commit actual contiene algun error en el codigo.</li>
+                <li><strong>git bisect good</strong> indica que el commit actual es completamente funcional.</li>
+                <li><strong>git bisect reset</strong> finaliza el proceso de analisis de commits.</li>
+            </ul>
+        </article>
+    </section>
     <footer>
+        <!-- Mapa de contacto y boton --> 
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6725775.229534308!2d-62.85835797499998!3d-34.602392999999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacc473596c3%3A0x568d6d5f7f1f535d!2sEducaci%C3%B3nIT!5e0!3m2!1ses-419!2sar!4v1632853379721!5m2!1ses-419!2sar" 
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <button class="icon-max">Mapa de contacto</button>
+        </div>
+        <div class="social">
+            <a href="https://github.com/C215714N/git-mj15" target="_blank">GitHub</a>
+            <a href="https://gitlab.com/C215714N/git-mj15" target="_blank">GitLab</a>
+            <a href="https://bitbucket.org/C215714N/git-mj15" target="_blank">BitBucket</a>
+        </div>
         <table class="colabs">
             <caption>Colaboradores</caption>
             <thead>
@@ -178,6 +237,11 @@
                     <td>melisaandrea@live.com.ar</td>
                 </tr>
                 <tr>
+                    <td>David Fontaiña</td>
+                    <td>davidfontaina</td>
+                    <td>david.fontaina@gmail.com</td>
+                </tr>
+                <tr>
                     <td>Carla Fernandez</td>
                     <td>Carla-F3rnand3z</td>
                     <td>carla.k.fernandez@gmail.com</td>
@@ -185,6 +249,7 @@
                 <!--Ingrese sus datos-->
             </tbody>
         </table>
+        <!-- Formulario de contacto -->
     </footer>
     <!--Scripts JS-->
     <script src="scripts/main.js"></script>
